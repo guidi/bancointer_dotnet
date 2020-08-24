@@ -1,5 +1,5 @@
-# bancointer_api_dotnet
-API para comunicação com o banco Inter (Boletos)
+# bancointer_dotnet
+Biblioteca em .NET para comunicação com o banco Inter (Boletos)
 
 
 Para cadastrar uma API na sua conta, siga o passo a passo abaixo: 
