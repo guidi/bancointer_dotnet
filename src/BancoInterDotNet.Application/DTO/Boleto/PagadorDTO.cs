@@ -1,12 +1,10 @@
-﻿using BancoInterDotNet.Application.Enum;
-using System;
+﻿using System;
 
 namespace BancoInterDotNet.Application.DTO.Boleto
 {
     public class PagadorDTO
     {
-        public TipoPessoa TipoPessoa { get; set; }
-        private String tipoPessoa { get; set; }
+        public String tipoPessoa { get; set; }
         public String nome { get; set; }
         public String endereco { get; set; }
         public String numero { get; set; }

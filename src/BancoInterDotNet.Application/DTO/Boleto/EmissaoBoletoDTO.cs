@@ -1,5 +1,4 @@
-﻿using BancoInterDotNet.Application.Enum;
-using System;
+﻿using System;
 
 namespace BancoInterDotNet.Application.DTO.Boleto
 {
@@ -11,7 +10,7 @@ namespace BancoInterDotNet.Application.DTO.Boleto
         public Decimal valorAbatimento { get; set; }
         public String dataEmissao { get; set; }
         public String dataVencimento { get; set; }
-        public Agenda Agenda { get; set; }
+        public String Agenda { get; set; }
         private String DiasAgenda { get; set; }
         public PagadorDTO pagador { get; set; }
         public MensagemDTO mensagem { get; set; }
