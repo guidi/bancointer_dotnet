@@ -17,7 +17,7 @@ namespace BancoInterDotNet.Application.Service
         private const String URL_CRIAR_BOLETO = "https://apis.bancointer.com.br/openbanking/v1/certificado/boletos";
         private const String URL_CONSULTAR_BOLETO_DETALHADO = "https://apis.bancointer.com.br/openbanking/v1/certificado/boletos/";
         private const String URL_BAIXAR_BOLETO = "https://apis.bancointer.com.br/openbanking/v1/certificado/boletos/{0}/baixas";
-
+        private const String URL_PDF_BOLETO = "https://apis.bancointer.com.br/openbanking/v1/certificado/boletos/{nossoNumero}/pdf";
 
         private static ConfiguracaoEmpresa ObterConfiguracaoDaEmpresa()
         {
@@ -127,6 +127,33 @@ namespace BancoInterDotNet.Application.Service
                 RespostaComMensagemDTO responseDTO = JsonConvert.DeserializeObject<RespostaComMensagemDTO>(resultadoStr);
 
                 return responseDTO;
+
+            }
+            catch (Exception ex)
+            {
+                response.Erro = true;
+                response.Mensagem = ex.Message;
+            }
+
+            return response;
+        }
+
+        public static async Task<RespostaComMensagemDTO> ObterPDFBoleto(String nossoNumero)
+        {
+            RespostaComMensagemDTO response = new RespostaComMensagemDTO();
+
+            try
+            {
+                var httpClientHandler = ObterHttpClientHandler();
+                var httpClient = new HttpClient(httpClientHandler);
+                httpClient.DefaultRequestHeaders.Add("accept", "application/json");
+                httpClient.DefaultRequestHeaders.Add("x-inter-conta-corrente", ObterConfiguracaoDaEmpresa().ContaCorrente);
+
+                var message = await httpClient.GetAsync(String.Format(URL_PDF_BOLETO, nossoNumero));
+
+                message.EnsureSuccessStatusCode();
+
+                response.message = await message.Content.ReadAsStringAsync();
 
             }
             catch (Exception ex)
