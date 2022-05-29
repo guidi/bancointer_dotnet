@@ -7,7 +7,8 @@ namespace BancoInterDotNet.Application.Service
         public static ConfiguracaoEmpresa ObterConfiguracao()
         {
             ConfiguracaoEmpresa empresaConfiguracao = new ConfiguracaoEmpresa();
-            empresaConfiguracao.ContaCorrente = "12234141";
+            empresaConfiguracao.ClientId = "xxxxxx";
+            empresaConfiguracao.ClientSecret = "xxxxxx";
             empresaConfiguracao.PathCertificado = @"C:\temp\cert\guidihost.pfx";
             empresaConfiguracao.SenhaCertificado = "Guidi@cert";
 

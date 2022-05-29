@@ -4,6 +4,7 @@ namespace BancoInterDotNet.Application.DTO.Boleto
 {
     public class PagadorDTO
     {
+        public String cpfCnpj { get; set; }
         public String tipoPessoa { get; set; }
         public String nome { get; set; }
         public String endereco { get; set; }
@@ -13,7 +14,6 @@ namespace BancoInterDotNet.Application.DTO.Boleto
         public String cidade { get; set; }
         public String uf { get; set; }
         public String cep { get; set; }
-        public String cnpjCpf { get; set; }
         public String email { get; set; }
         public String ddd { get; set; }
         public String telefone { get; set; }

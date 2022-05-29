@@ -2,16 +2,13 @@
 
 namespace BancoInterDotNet.Application.DTO.Boleto
 {
-    public class EmissaoBoletoDTO
+    public class RegistroBoletoDTO
     {
         public String seuNumero { get; set; }
-        public String cnpjCPFBeneficiario { get; set; }
         public Decimal valorNominal { get; set; }
         public Decimal valorAbatimento { get; set; }
-        public String dataEmissao { get; set; }
         public String dataVencimento { get; set; }
-        public String Agenda { get; set; }
-        private String DiasAgenda { get; set; }
+        public Int32 numDiasAgenda { get; set; }
         public PagadorDTO pagador { get; set; }
         public MensagemDTO mensagem { get; set; }
         public DescontoDTO desconto1 { get; set; }
@@ -20,7 +17,7 @@ namespace BancoInterDotNet.Application.DTO.Boleto
         public MultaDTO multa { get; set; }
         public MoraDTO mora { get; set; }
 
-        public EmissaoBoletoDTO()
+        public RegistroBoletoDTO()
         {
             pagador = new PagadorDTO();
             mensagem = new MensagemDTO();

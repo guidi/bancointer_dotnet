@@ -1,9 +1,8 @@
-﻿using BancoInterDotNet.Application.DTO.Boleto;
-using System;
+﻿using System;
 
-namespace BancoInterDotNet.Application.DTO.Response
+namespace BancoInterDotNet.Application.DTO.Boleto
 {
-    public class ConsultaBoletoDetalhadoResponseDTO: ResponseBase
+    public class ConsultaBoletoIndividualResponseDTO
     {
         public string nomeBeneficiario { get; set; }
         public string cnpjCpfBeneficiario { get; set; }

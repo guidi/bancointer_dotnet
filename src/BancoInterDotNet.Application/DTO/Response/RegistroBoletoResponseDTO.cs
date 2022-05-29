@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace BancoInterDotNet.Application.DTO.Response
+﻿namespace BancoInterDotNet.Application.DTO.Response
 {
-    public class EmissaoBoletoResponseDTO : ResponseBase
+    public class RegistroBoletoResponseDTO : ResponseBase
     {
         public string seuNumero { get; set; }
         public string nossoNumero { get; set; }
